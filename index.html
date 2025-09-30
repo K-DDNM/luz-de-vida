@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyalu B5 Serum - La Roche-Posay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #D4B5A0 0%, #C8A882 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+
+
+        .product-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 40px 20px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease both;
+        }
+
+        .product-image {
+            width: 280px;
+            height: 350px;
+            max-width: 90%;
+            margin: 0 auto 30px;
+            background: linear-gradient(145deg, #f0f0f0, #ffffff);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 15px 35px rgba(0,0,0,0.1),
+                inset 0 -5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+                    .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23ffffff;stop-opacity:1" /><stop offset="100%" style="stop-color:%23f0e6dc;stop-opacity:1" /></linearGradient></defs><rect x="60" y="30" width="80" height="190" rx="15" fill="url(%23grad1)" stroke="%239C7A5C" stroke-width="2"/><ellipse cx="100" cy="70" rx="20" ry="20" fill="%23D4B5A0" opacity="0.6"/><text x="100" y="230" text-anchor="middle" font-family="Arial" font-size="12" fill="%239C7A5C" font-weight="bold">HYALU B5</text></svg>') center/contain no-repeat;
+        }
+
+        .product-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .product-description {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #9C7A5C;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .price .currency {
+            font-size: 1.5rem;
+            vertical-align: top;
+        }
+
+        .buy-button {
+            background: linear-gradient(135deg, #B8956A 0%, #9C7A5C 100%);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(156, 122, 92, 0.4);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .buy-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(156, 122, 92, 0.6);
+        }
+
+        .buy-button:active {
+            transform: translateY(0);
+        }
+
+        .buy-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .buy-button:hover::before {
+            left: 100%;
+        }
+
+        .features {
+            margin-top: 40px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .features h3 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            display: grid;
+            gap: 15px;
+            text-align: left;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(156, 122, 92, 0.15);
+            border-radius: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateX(5px);
+        }
+
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            background: #9C7A5C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        .guarantee {
+            background: rgba(212, 181, 160, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border: 2px solid rgba(156, 122, 92, 0.3);
+        }
+
+        .guarantee h4 {
+            color: #9C7A5C;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .guarantee p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {            
+            .product-image {
+                width: 250px;
+                height: 300px;
+            }
+            
+            .price {
+                font-size: 2rem;
+            }
+            
+            .buy-button {
+                padding: 15px 40px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+
+        <!-- Producto Principal -->
+        <div class="product-section">
+            <div class="product-image">
+                <img src="https://i.imgur.com/4ZqKX9L.jpeg" alt="Hyalu B5 Serum La Roche-Posay">
+            </div>
+            
+            <h2 class="product-title">Hyalu B5 Serum</h2>
+            
+            <p class="product-description">
+                Serum anti-edad con ácido hialurónico puro y vitamina B5. 
+                Rellena las arrugas, repara la barrera cutánea y proporciona 
+                una hidratación intensa durante 24 horas.
+            </p>
+            
+            <div class="price">
+                <span class="currency">$</span>42
+            </div>
+            
+            <button class="buy-button" onclick="comprar()">
+                Comprar Ahora
+            </button>
+            
+            <!-- Características -->
+            <div class="features">
+                <h3>¿Por qué elegir Hyalu B5?</h3>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Ácido hialurónico puro 2 pesos moleculares</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Vitamina B5 reparadora</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Hidratación intensa 24h</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <span>Todo tipo de pieles, incluso sensibles</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Garantía -->
+            <div class="guarantee">
+                <h4>🛡️ Garantía de Satisfacción</h4>
+                <p>30 días de garantía de devolución del dinero. Si no estás completamente satisfecho, te devolvemos tu dinero.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function comprar() {
+            // Redirigir al checkout
+            window.location.href = 'https://checkout.bold.co/payment/LNK_5VTD5QUWLS';
+        }
+
+        // Animación de entrada cuando se carga la página
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
